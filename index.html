@@ -14,12 +14,27 @@
       color: #0f0;
       font-family: 'Orbitron', monospace;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      animation: bgFlash 2s infinite;
       overflow: hidden;
+      flex-direction: column;
+    }
+
+    #startBtn {
+      background: red;
+      border: none;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-bottom: 30px;
+      animation: pulse 1s infinite;
+    }
+
+    .hidden {
+      display: none;
     }
 
     h1 {
@@ -49,32 +64,50 @@
     }
 
     @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        opacity: 0;
-      }
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0; }
     }
 
     @keyframes bgFlash {
       0%, 100% { background-color: black; }
       50% { background-color: #111; }
     }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
   </style>
 </head>
-<body>
+<body id="body">
 
-  <h1>⚠️ Your Data Has Been Hacked ⚠️</h1>
-  <h2>— By Sameer Jaduger 😈 —</h2>
-  <p class="notice">(jaduger sameer enjoy your life now😄)</p>
+  <button id="startBtn">🚨 Tap to Start</button>
 
-  <!-- 🔊 Sound message -->
-  <audio autoplay>
+  <div id="mainContent" class="hidden">
+    <h1>⚠️ Your Data Has Been Hacked ⚠️</h1>
+    <h2>— By Sameer Jaduger 😈 —</h2>
+    <p class="notice">(Jaduger sameer enjoy your life now)</p>
+  </div>
+
+  <audio id="hackedAudio">
     <source src="https://sameerhacks.s3.eu-north-1.amazonaws.com/hacked-message.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
+  <script>
+    const btn = document.getElementById('startBtn');
+    const audio = document.getElementById('hackedAudio');
+    const content = document.getElementById('mainContent');
+    const body = document.getElementById('body');
+
+    btn.addEventListener('click', () => {
+      btn.classList.add('hidden');
+      content.classList.remove('hidden');
+      body.style.animation = "bgFlash 2s infinite";
+      audio.play();
+    });
+  </script>
 </body>
 </html>
 
