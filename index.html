@@ -3,47 +3,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>💀 Hacked by Sameer 💀</title>
+  <title>💀 Hacked by Sameer Jaduger 💀</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(ellipse at center, #000000 0%, #050505 100%);
+      background-color: #000;
       color: #0f0;
       font-family: 'Orbitron', monospace;
-      text-align: center;
-      height: 100vh;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+      height: 100vh;
       animation: bgFlash 2s infinite;
+      overflow: hidden;
     }
 
     h1 {
       font-size: 3em;
-      text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px crimson;
       animation: glow 1s infinite alternate;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       color: crimson;
       animation: flicker 2s infinite;
+      margin-top: 20px;
     }
 
     .notice {
-      margin-top: 40px;
+      color: white;
       font-size: 1em;
-      color: #aaa;
-      animation: fadeIn 5s ease-in;
+      margin-top: 40px;
+      opacity: 0.4;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 10px red; }
-      to { text-shadow: 0 0 20px crimson, 0 0 30px red; }
+      from { text-shadow: 0 0 5px red; }
+      to { text-shadow: 0 0 25px crimson, 0 0 35px red; }
     }
 
     @keyframes flicker {
@@ -56,24 +58,23 @@
     }
 
     @keyframes bgFlash {
-      0%, 100% { background-color: #000; }
+      0%, 100% { background-color: black; }
       50% { background-color: #111; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <h1>⚠️ Your Data Has Been Hacked ⚠️</h1>
-  <h2>— By Sameer —</h2>
-  <p class="notice">jaduger sameer enjoy your life now. 😄</p>
 
-  <!-- 🔊 Beep Sound -->
+  <h1>⚠️ Your Data Has Been Hacked ⚠️</h1>
+  <h2>— By Sameer Jaduger 😈 —</h2>
+  <p class="notice">(jaduger sameer enjoy your life now😄)</p>
+
+  <!-- 🔊 Sound message -->
   <audio autoplay>
-    <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
+    <source src="https://sameerhacks.s3.eu-north-1.amazonaws.com/hacked-message.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
+
 </body>
 </html>
+
