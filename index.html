@@ -3,111 +3,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>💀 Hacked by Sameer Jaduger 💀</title>
+  <title>📱 Data Hacked by Sameer</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-
     body {
       margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #0f0;
-      font-family: 'Orbitron', monospace;
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      overflow: hidden;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      overflow: hidden;
-      flex-direction: column;
-    }
-
-    #startBtn {
-      background: red;
-      border: none;
-      padding: 15px 30px;
-      color: white;
-      font-size: 1.2em;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-bottom: 30px;
-      animation: pulse 1s infinite;
-    }
-
-    .hidden {
-      display: none;
     }
 
     h1 {
-      font-size: 3em;
-      text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px crimson;
-      animation: glow 1s infinite alternate;
+      font-size: 2.5em;
       text-align: center;
+      text-shadow: 0 0 10px red;
+      animation: flicker 1.5s infinite;
     }
 
-    h2 {
-      font-size: 1.6em;
-      color: crimson;
-      animation: flicker 2s infinite;
-      margin-top: 20px;
+    .phone {
+      width: 200px;
+      height: 400px;
+      border: 5px solid #00ff00;
+      border-radius: 20px;
+      position: relative;
+      margin-top: 30px;
+      animation: glow 2s infinite alternate;
     }
 
-    .notice {
-      color: white;
-      font-size: 1em;
-      margin-top: 40px;
-      opacity: 0.4;
+    .data-stream {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 80%;
+      background: linear-gradient(to bottom, lime, transparent);
+      animation: stream 1s linear infinite;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 5px red; }
-      to { text-shadow: 0 0 25px crimson, 0 0 35px red; }
+      from { box-shadow: 0 0 10px lime; }
+      to { box-shadow: 0 0 30px lime, 0 0 50px green; }
     }
 
     @keyframes flicker {
       0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-      20%, 24%, 55% { opacity: 0; }
+      20%, 24%, 55% { opacity: 0.3; }
     }
 
-    @keyframes bgFlash {
-      0%, 100% { background-color: black; }
-      50% { background-color: #111; }
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+    @keyframes stream {
+      0% { top: 10%; height: 0; opacity: 1; }
+      100% { top: 90%; height: 80%; opacity: 0; }
     }
   </style>
 </head>
-<body id="body">
+<body>
+  <h1>📱 Your Phone Data Has Been Hacked <br>— By Sameer —</h1>
 
-  <button id="startBtn">🚨 Tap to Start</button>
-
-  <div id="mainContent" class="hidden">
-    <h1>⚠️ Your Data Has Been Hacked ⚠️</h1>
-    <h2>— By Sameer Jaduger 😈 —</h2>
-    <p class="notice">(Jaduger sameer enjoy your life now)</p>
+  <div class="phone">
+    <div class="data-stream"></div>
   </div>
-
-  <audio id="hackedAudio">
-    <source src="https://sameerhacks.s3.eu-north-1.amazonaws.com/hacked-message.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    const btn = document.getElementById('startBtn');
-    const audio = document.getElementById('hackedAudio');
-    const content = document.getElementById('mainContent');
-    const body = document.getElementById('body');
-
-    btn.addEventListener('click', () => {
-      btn.classList.add('hidden');
-      content.classList.remove('hidden');
-      body.style.animation = "bgFlash 2s infinite";
-      audio.play();
-    });
-  </script>
 </body>
 </html>
+
 
